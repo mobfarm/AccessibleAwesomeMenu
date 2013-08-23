@@ -7,25 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MFButtonTypes.h"
+
+typedef enum MFAnimatableButtonType
+{
+    MFAnimatableButtonTypeLeft =               0,
+    MFAnimatableButtonTypeRight =              1,
+    MFAnimatableButtonTypeLeftBig =            2,
+    MFAnimatableButtonTypeLeftHuge =           3
+    
+} MFAnimatableButtonType;
 
 @interface MFAnimatableButton : UIButton {
     CGPoint _startPoint;
     CGPoint _endPoint;
     CGPoint _nearPoint;
     CGPoint _farPoint;
-    EXploraButton _type;
+    MFAnimatableButtonType _type;
 }
 
 @property (nonatomic) CGPoint startPoint;
 @property (nonatomic) CGPoint endPoint;
 @property (nonatomic) CGPoint nearPoint;
 @property (nonatomic) CGPoint farPoint;
-@property (nonatomic, assign) EXploraButton type;
+@property (nonatomic, assign) MFAnimatableButtonType type;
 
 @property (nonatomic) BOOL visible;
 
-- (void)setupWithType:(EXploraButton)theType;
+- (void)setupWithType:(MFAnimatableButtonType)theType;
 - (void)show;
 - (void)hide;
 @end
