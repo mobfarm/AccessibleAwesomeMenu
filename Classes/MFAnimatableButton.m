@@ -20,7 +20,7 @@
 @synthesize farPoint = _farPoint;
 @synthesize type = _type;
 
-- (void)setupWithType:(EXploraButton)theType{
+- (void)setupWithType:(MFAnimatableButtonType)theType{
     // We don't animate opacity for now
     self.type = theType;
     
@@ -29,16 +29,16 @@
     _startPoint = CGPointMake(self.center.x - kStartOffset, self.center.y);
     _farPoint = CGPointMake(_endPoint.x + kAnimationOffset, self.center.y);
     _nearPoint = CGPointMake(_endPoint.x - kAnimationOffset, self.center.y);
-
-    if (_type == EXploraButtonPlay) {
+    
+    if (_type == MFAnimatableButtonTypeLeftHuge) {
         // Big
         _startPoint = CGPointMake(self.center.x - kStartOffset * 2, self.center.y);
-    } else if (_type == EXploraButtonLove) {
+    } else if (_type == MFAnimatableButtonTypeRight) {
         // From right
         _startPoint = CGPointMake(self.center.x + kStartOffset, self.center.y);
         _farPoint = CGPointMake(_endPoint.x - kAnimationOffset, self.center.y);
         _nearPoint = CGPointMake(_endPoint.x + kAnimationOffset, self.center.y);
-    } else if (_type == EXploraButtonMuse) {
+    } else if (_type == MFAnimatableButtonTypeLeftBig) {
         // Slightly bigger
         _startPoint = CGPointMake(self.center.x - kStartOffset - 10, self.center.y);
     }
