@@ -78,7 +78,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 - (void)setLoveFilled:(BOOL)filled{
     [UIView transitionWithView:_addButton
-                      duration:kAnimationDuration / 2.0
+                      duration:0.5 / 2.0
                        options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionAllowAnimatedContent
                     animations:^{
                         if (filled) {
